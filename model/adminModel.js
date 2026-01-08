@@ -18,16 +18,6 @@ const adminSchema = new mongoose.Schema(
       required: true,
       minlength: 6,
     },
-    image: {
-      type: String,
-      required: true,
-    },
-    location: {
-      type: String,
-    },
-    shortDes: {
-      type: String,
-    },
     refreshtoken: [
       {
         token: { type: String, required: true },
