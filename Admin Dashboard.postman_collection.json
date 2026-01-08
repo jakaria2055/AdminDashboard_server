@@ -132,22 +132,22 @@
 							"formdata": [
 								{
 									"key": "employeeID",
-									"value": "EMP011",
+									"value": "EMP014",
 									"type": "text"
 								},
 								{
 									"key": "name",
-									"value": "Sagor Hasan",
+									"value": "Shahadat ",
 									"type": "text"
 								},
 								{
 									"key": "department",
-									"value": "HR",
+									"value": "IT",
 									"type": "text"
 								},
 								{
 									"key": "role",
-									"value": "AGM",
+									"value": "Manager",
 									"type": "text"
 								},
 								{
@@ -157,12 +157,12 @@
 								},
 								{
 									"key": "joiningDate",
-									"value": "2024-08-01",
+									"value": "2025-07-05",
 									"type": "text"
 								},
 								{
 									"key": "performanceScore",
-									"value": "75",
+									"value": "70",
 									"type": "text"
 								},
 								{
@@ -198,7 +198,14 @@
 					"name": "Get Employee",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoiNjk1ZjZjODIwNzk5YjdkZGIzMWE0MTI3IiwiaWF0IjoxNzY3ODYxNDI0LCJleHAiOjE3Njc5NDc4MjR9.h_nwR40PQha5Bp0aVOgNGIj6BOoYOa0LFfCmVZ2F10s",
+								"description": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoiNjk1ZjZjODIwNzk5YjdkZGIzMWE0MTI3IiwiaWF0IjoxNzY3ODYxNDI0LCJleHAiOjE3Njc5NDc4MjR9.h_nwR40PQha5Bp0aVOgNGIj6BOoYOa0LFfCmVZ2F10s",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "http://localhost:3000/api/v1/employees",
 							"protocol": "http",
@@ -417,7 +424,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"role\": \"Senior MERN Developer\",\r\n    \"performanceScore\": 90\r\n}",
+							"raw": "{\r\n    \"role\": \"MERN Project Manager\",\r\n    \"performanceScore\": 90\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -425,7 +432,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/v1/employees/update/:_id\n",
+							"raw": "http://localhost:3000/api/v1/employees/update/:id",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -436,7 +443,7 @@
 								"v1",
 								"employees",
 								"update",
-								":_id\n"
+								":id"
 							],
 							"query": [
 								{
@@ -447,7 +454,7 @@
 							],
 							"variable": [
 								{
-									"key": "_id\n",
+									"key": "id",
 									"value": "695f802f452b51ae713df8bd"
 								}
 							]
@@ -570,6 +577,96 @@
 								"employees",
 								"performance",
 								"stats"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DASHBOARD SUMMERY",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoiNjk1ZjZjODIwNzk5YjdkZGIzMWE0MTI3IiwiaWF0IjoxNzY3ODYxNDI0LCJleHAiOjE3Njc5NDc4MjR9.h_nwR40PQha5Bp0aVOgNGIj6BOoYOa0LFfCmVZ2F10s",
+								"description": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoiNjk1ZjZjODIwNzk5YjdkZGIzMWE0MTI3IiwiaWF0IjoxNzY3ODYxNDI0LCJleHAiOjE3Njc5NDc4MjR9.h_nwR40PQha5Bp0aVOgNGIj6BOoYOa0LFfCmVZ2F10s",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/employees/dashboard/summary",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"employees",
+								"dashboard",
+								"summary"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DEPARTMENT WISE EMPLOYEE",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoiNjk1ZjZjODIwNzk5YjdkZGIzMWE0MTI3IiwiaWF0IjoxNzY3ODYxNDI0LCJleHAiOjE3Njc5NDc4MjR9.h_nwR40PQha5Bp0aVOgNGIj6BOoYOa0LFfCmVZ2F10s",
+								"description": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoiNjk1ZjZjODIwNzk5YjdkZGIzMWE0MTI3IiwiaWF0IjoxNzY3ODYxNDI0LCJleHAiOjE3Njc5NDc4MjR9.h_nwR40PQha5Bp0aVOgNGIj6BOoYOa0LFfCmVZ2F10s",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/employees/dashboard/department-wise",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"employees",
+								"dashboard",
+								"department-wise"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TOP 5 PERFORMER",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoiNjk1ZjZjODIwNzk5YjdkZGIzMWE0MTI3IiwiaWF0IjoxNzY3ODYxNDI0LCJleHAiOjE3Njc5NDc4MjR9.h_nwR40PQha5Bp0aVOgNGIj6BOoYOa0LFfCmVZ2F10s",
+								"description": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoiNjk1ZjZjODIwNzk5YjdkZGIzMWE0MTI3IiwiaWF0IjoxNzY3ODYxNDI0LCJleHAiOjE3Njc5NDc4MjR9.h_nwR40PQha5Bp0aVOgNGIj6BOoYOa0LFfCmVZ2F10s",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/employees/dashboard/top-performers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"employees",
+								"dashboard",
+								"top-performers"
 							]
 						}
 					},

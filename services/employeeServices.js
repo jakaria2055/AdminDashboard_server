@@ -122,3 +122,83 @@ export const getPerformanceStatsService = async () => {
     poor: employees.filter(e => e.performanceScore < 50).length,
   };
 };
+
+
+//DASHBOARD SUMMARY
+export const getDashboardSummaryService = async () => {
+  const totalEmployees = await EmployeeModel.countDocuments();
+
+  const activeEmployees = await EmployeeModel.countDocuments({
+    isArchived: false,
+  });
+
+  const archivedEmployees = await EmployeeModel.countDocuments({
+    isArchived: true,
+  });
+
+    /* Recent join (last 30 days) */
+  const last30Days = new Date();
+  last30Days.setDate(last30Days.getDate() - 30);
+
+  const recentJoinLast30Days = await EmployeeModel.countDocuments({
+    joiningDate: { $gte: last30Days },
+    isArchived: false,
+  });
+
+  /* Performance summary */
+  const employees = await EmployeeModel.find({ isArchived: false });
+
+  const performance = {
+    excellent: employees.filter(e => e.performanceScore >= 85).length,
+    good: employees.filter(e => e.performanceScore >= 70 && e.performanceScore < 85).length,
+    average: employees.filter(e => e.performanceScore >= 50 && e.performanceScore < 70).length,
+    poor: employees.filter(e => e.performanceScore < 50).length,
+  };
+
+  return {
+    totalEmployees,
+    activeEmployees,
+    archivedEmployees,
+    recentJoinLast30Days,
+    performance,
+  };
+};
+
+//DEPARTMENT WISE COUNT
+export const getDepartmentWiseCountService = async () => {
+  const result = await EmployeeModel.aggregate([
+    {
+      $match: { isArchived: false }
+    },
+    {
+      $group: {
+        _id: "$department",
+        count: { $sum: 1 }
+      }
+    },
+    {
+      $project: {
+        _id: 0,
+        department: "$_id",
+        count: 1
+      }
+    },
+    {
+      $sort: { count: -1 }
+    }
+  ]);
+
+  return result;
+};
+
+//TOP 5 PERFORMERS
+export const getTopPerformersService = async (limit = 5) => {
+  return await EmployeeModel.find({ isArchived: false })
+    .sort({ performanceScore: -1 })
+    .limit(limit)
+    .select(
+      "employeeID name department role image performanceScore"
+    );
+};
+
+

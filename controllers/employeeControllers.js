@@ -5,6 +5,9 @@ import {
   archiveEmployeeService,
   getRecentEmployeesService,
   getPerformanceStatsService,
+  getDashboardSummaryService,
+  getDepartmentWiseCountService,
+  getTopPerformersService
 } from "../services/employeeServices.js";
 
 //CREATE EMPLOYEE
@@ -90,3 +93,64 @@ export const getPerformanceStats = async (req, res) => {
     res.status(400).json({ success: false, message: error.message });
   }
 };
+
+//DASHBOARD SUMMARY
+export const getDashboardSummary = async (req, res) => {
+  try {
+    const summary = await getDashboardSummaryService();
+
+    res.status(200).json({
+      success: true,
+      message: "Dashboard summary fetched successfully",
+      data: summary,
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
+
+
+//DEPARTMENT PIE CHART
+export const getDepartmentWiseCount = async (req, res) => {
+  try {
+    const data = await getDepartmentWiseCountService();
+
+    res.status(200).json({
+      success: true,
+      message: "Department-wise employee count fetched",
+      data,
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
+
+
+//TOP PERFORMERS
+export const getTopPerformers = async (req, res) => {
+  try {
+    const limit = Number(req.query.limit) || 5;
+
+    const performers = await getTopPerformersService(limit);
+
+    res.status(200).json({
+      success: true,
+      message: "Top performers fetched successfully",
+      data: performers,
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
+
+
+
