@@ -1,0 +1,581 @@
+{
+	"info": {
+		"_postman_id": "cdc85376-ca52-4199-91fe-9b5cff2b439e",
+		"name": "Admin Dashboard",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42841346",
+		"_collection_link": "https://lively-satellite-332779.postman.co/workspace/Football-App~707156a3-bdf0-4dc2-bc6c-0c714cbd2dec/collection/42841346-cdc85376-ca52-4199-91fe-9b5cff2b439e?action=share&source=collection_link&creator=42841346"
+	},
+	"item": [
+		{
+			"name": "Admin Controller",
+			"item": [
+				{
+					"name": "Admin Signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Jon Doe\",\r\n    \"email\": \"jon@example.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/admin/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sign in",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"jon@example.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/admin/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sign in Copy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoiNjk1ZjZjODIwNzk5YjdkZGIzMWE0MTI3IiwiaWF0IjoxNzY3ODYxNDI0LCJleHAiOjE3Njc5NDc4MjR9.h_nwR40PQha5Bp0aVOgNGIj6BOoYOa0LFfCmVZ2F10s",
+								"description": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoiNjk1ZjZjODIwNzk5YjdkZGIzMWE0MTI3IiwiaWF0IjoxNzY3ODYxNDI0LCJleHAiOjE3Njc5NDc4MjR9.h_nwR40PQha5Bp0aVOgNGIj6BOoYOa0LFfCmVZ2F10s",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/admin/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Employee Folder",
+			"item": [
+				{
+					"name": "Create Employee",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoiNjk1ZjZjODIwNzk5YjdkZGIzMWE0MTI3IiwiaWF0IjoxNzY3ODYxNDI0LCJleHAiOjE3Njc5NDc4MjR9.h_nwR40PQha5Bp0aVOgNGIj6BOoYOa0LFfCmVZ2F10s",
+								"description": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoiNjk1ZjZjODIwNzk5YjdkZGIzMWE0MTI3IiwiaWF0IjoxNzY3ODYxNDI0LCJleHAiOjE3Njc5NDc4MjR9.h_nwR40PQha5Bp0aVOgNGIj6BOoYOa0LFfCmVZ2F10s",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "employeeID",
+									"value": "EMP011",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Sagor Hasan",
+									"type": "text"
+								},
+								{
+									"key": "department",
+									"value": "HR",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "AGM",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "Active",
+									"type": "text"
+								},
+								{
+									"key": "joiningDate",
+									"value": "2024-08-01",
+									"type": "text"
+								},
+								{
+									"key": "performanceScore",
+									"value": "75",
+									"type": "text"
+								},
+								{
+									"key": "isArchived",
+									"value": "false",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "w7jFOspk5/azadIMG.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/employees/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"employees",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Employee",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/employees",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"employees"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Employee",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoiNjk1ZjZjODIwNzk5YjdkZGIzMWE0MTI3IiwiaWF0IjoxNzY3ODYxNDI0LCJleHAiOjE3Njc5NDc4MjR9.h_nwR40PQha5Bp0aVOgNGIj6BOoYOa0LFfCmVZ2F10s",
+								"description": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoiNjk1ZjZjODIwNzk5YjdkZGIzMWE0MTI3IiwiaWF0IjoxNzY3ODYxNDI0LCJleHAiOjE3Njc5NDc4MjR9.h_nwR40PQha5Bp0aVOgNGIj6BOoYOa0LFfCmVZ2F10s",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/employees/?search=lahif",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"employees",
+								""
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "lahif"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FILTER + SORT + PAGINATION",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoiNjk1ZjZjODIwNzk5YjdkZGIzMWE0MTI3IiwiaWF0IjoxNzY3ODYxNDI0LCJleHAiOjE3Njc5NDc4MjR9.h_nwR40PQha5Bp0aVOgNGIj6BOoYOa0LFfCmVZ2F10s",
+								"description": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoiNjk1ZjZjODIwNzk5YjdkZGIzMWE0MTI3IiwiaWF0IjoxNzY3ODYxNDI0LCJleHAiOjE3Njc5NDc4MjR9.h_nwR40PQha5Bp0aVOgNGIj6BOoYOa0LFfCmVZ2F10s",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/employees/?department=IT&status=Active&sortBy=joiningDate&order=desc&page=1&limit=5\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"employees",
+								""
+							],
+							"query": [
+								{
+									"key": "department",
+									"value": "IT"
+								},
+								{
+									"key": "status",
+									"value": "Active"
+								},
+								{
+									"key": "sortBy",
+									"value": "joiningDate"
+								},
+								{
+									"key": "order",
+									"value": "desc"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "5\n"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ARCHIVED TOGGLE (False)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoiNjk1ZjZjODIwNzk5YjdkZGIzMWE0MTI3IiwiaWF0IjoxNzY3ODYxNDI0LCJleHAiOjE3Njc5NDc4MjR9.h_nwR40PQha5Bp0aVOgNGIj6BOoYOa0LFfCmVZ2F10s",
+								"description": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoiNjk1ZjZjODIwNzk5YjdkZGIzMWE0MTI3IiwiaWF0IjoxNzY3ODYxNDI0LCJleHAiOjE3Njc5NDc4MjR9.h_nwR40PQha5Bp0aVOgNGIj6BOoYOa0LFfCmVZ2F10s",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/employees/?archived=false",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"employees",
+								""
+							],
+							"query": [
+								{
+									"key": "archived",
+									"value": "false"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ARCHIVED TOGGLE (True)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoiNjk1ZjZjODIwNzk5YjdkZGIzMWE0MTI3IiwiaWF0IjoxNzY3ODYxNDI0LCJleHAiOjE3Njc5NDc4MjR9.h_nwR40PQha5Bp0aVOgNGIj6BOoYOa0LFfCmVZ2F10s",
+								"description": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoiNjk1ZjZjODIwNzk5YjdkZGIzMWE0MTI3IiwiaWF0IjoxNzY3ODYxNDI0LCJleHAiOjE3Njc5NDc4MjR9.h_nwR40PQha5Bp0aVOgNGIj6BOoYOa0LFfCmVZ2F10s",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/employees/?archived=true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"employees",
+								""
+							],
+							"query": [
+								{
+									"key": "archived",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Employee",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoiNjk1ZjZjODIwNzk5YjdkZGIzMWE0MTI3IiwiaWF0IjoxNzY3ODYxNDI0LCJleHAiOjE3Njc5NDc4MjR9.h_nwR40PQha5Bp0aVOgNGIj6BOoYOa0LFfCmVZ2F10s",
+								"description": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoiNjk1ZjZjODIwNzk5YjdkZGIzMWE0MTI3IiwiaWF0IjoxNzY3ODYxNDI0LCJleHAiOjE3Njc5NDc4MjR9.h_nwR40PQha5Bp0aVOgNGIj6BOoYOa0LFfCmVZ2F10s",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"role\": \"Senior MERN Developer\",\r\n    \"performanceScore\": 90\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/employees/update/:_id\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"employees",
+								"update",
+								":_id\n"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "_id\n",
+									"value": "695f802f452b51ae713df8bd"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SOFT DELETE (ARCHIVE)",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoiNjk1ZjZjODIwNzk5YjdkZGIzMWE0MTI3IiwiaWF0IjoxNzY3ODYxNDI0LCJleHAiOjE3Njc5NDc4MjR9.h_nwR40PQha5Bp0aVOgNGIj6BOoYOa0LFfCmVZ2F10s",
+								"description": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoiNjk1ZjZjODIwNzk5YjdkZGIzMWE0MTI3IiwiaWF0IjoxNzY3ODYxNDI0LCJleHAiOjE3Njc5NDc4MjR9.h_nwR40PQha5Bp0aVOgNGIj6BOoYOa0LFfCmVZ2F10s",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/employees/:id/archive",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"employees",
+								":id",
+								"archive"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "695f7ff9452b51ae713df8ba"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RECENT JOIN (Top 10)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoiNjk1ZjZjODIwNzk5YjdkZGIzMWE0MTI3IiwiaWF0IjoxNzY3ODYxNDI0LCJleHAiOjE3Njc5NDc4MjR9.h_nwR40PQha5Bp0aVOgNGIj6BOoYOa0LFfCmVZ2F10s",
+								"description": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoiNjk1ZjZjODIwNzk5YjdkZGIzMWE0MTI3IiwiaWF0IjoxNzY3ODYxNDI0LCJleHAiOjE3Njc5NDc4MjR9.h_nwR40PQha5Bp0aVOgNGIj6BOoYOa0LFfCmVZ2F10s",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/employees/recent/list?limit=5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"employees",
+								"recent",
+								"list"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PERFORMANCE STATS",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoiNjk1ZjZjODIwNzk5YjdkZGIzMWE0MTI3IiwiaWF0IjoxNzY3ODYxNDI0LCJleHAiOjE3Njc5NDc4MjR9.h_nwR40PQha5Bp0aVOgNGIj6BOoYOa0LFfCmVZ2F10s",
+								"description": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoiNjk1ZjZjODIwNzk5YjdkZGIzMWE0MTI3IiwiaWF0IjoxNzY3ODYxNDI0LCJleHAiOjE3Njc5NDc4MjR9.h_nwR40PQha5Bp0aVOgNGIj6BOoYOa0LFfCmVZ2F10s",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/employees/performance/stats",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"employees",
+								"performance",
+								"stats"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
